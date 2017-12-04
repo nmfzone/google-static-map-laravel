@@ -32,11 +32,14 @@ class GoogleStaticMap extends Map
             $config = config('google-map');
 
             $marker = (new Marker)
-                ->setIconUrl($config['static_map']['default_marker']['icon_url'])
                 ->setColor($config['static_map']['default_marker']['color'])
                 ->setSize($config['static_map']['default_marker']['size'])
                 ->setLatitude($latitude)
                 ->setLongitude($longitude);
+
+            if ($icon = $config['static_map']['default_marker']['icon_url']) {
+                $marker = $marker->setIconUrl($icon);
+            }
 
             $this->addMarker($marker);
         }
