@@ -33,9 +33,9 @@ class GoogleStaticMapServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $config = $this->app->config['google-map'];
+        $this->app->singleton(GoogleStaticMap::class, function ($app) {
+            $config = $app->config['google-map'];
 
-        $this->app->singleton(GoogleStaticMap::class, function () use ($config) {
             return (new GoogleStaticMap)
                 ->setAPIKey($config['api_key'])
                 ->setZoom($config['static_map']['zoom'])
