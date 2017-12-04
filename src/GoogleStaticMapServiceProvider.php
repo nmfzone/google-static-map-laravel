@@ -47,13 +47,9 @@ class GoogleStaticMapServiceProvider extends ServiceProvider
                 ->setScale($config['static_map']['scale']);
 
             try {
-                $map = $map->setLanguage(config('app.locale'));
+                $map = $map->setLanguage(config('google-map.static_map.lang', config('app.locale')));
             } catch (Exception $e) {
                 // do nothing
-            }
-
-            if ($lang = config('google-map.static_map.lang')) {
-                $map = $map->setLanguage($lang);
             }
 
             return $map;

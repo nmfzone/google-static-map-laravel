@@ -24,9 +24,9 @@ return [
 
             'color' => 'red',
 
-            'size' => 'mid',
+            'size' => '',
 
-            'icon_url' => null,
+            'icon_url' => '',
 
         ],
 
