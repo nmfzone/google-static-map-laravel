@@ -65,7 +65,19 @@ $app->register(NMFCODES\GoogleStaticMap\GoogleStaticMapServiceProvider::class);
 
 ## Usage
 
-TODO
+Using facade (with default config),
+
+```php
+GoogleStaticMap::setCenter('Yogyakarta')->getUrl();
+```
+
+If you want to use the default marker, you can call `make($latitude, $longitude)` first:
+
+```php
+GoogleStaticMap::make('-7.797068', '110.370529')->getUrl();
+
+GoogleStaticMap::make('-7.797068', '110.370529')->setCenter('Indonesia')->setZoom('4')->getUrl();
+```
 
 ## Security
 
