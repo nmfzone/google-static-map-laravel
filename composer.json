@@ -17,15 +17,23 @@
     ],
     "repositories": [
         {
-            "type": "git",
-            "url":  "git@github.com:bensquire/php-static-maps-generator.git"
+            "type": "package",
+            "package": {
+                "name": "bensquire/php-static-maps-generator",
+                "version": "2.2.0",
+                "source": {
+                    "url": "git@github.com:bensquire/php-static-maps-generator.git",
+                    "type": "git",
+                    "reference": "e45d40e"
+                }
+            }
         }
     ],
     "require": {
         "php": ">=7.1.0",
         "illuminate/contracts": "5.*",
         "illuminate/support": "5.*",
-        "bensquire/php-static-maps-generator": "dev-master"
+        "bensquire/php-static-maps-generator": "2.2.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "^6.2"
@@ -50,5 +58,5 @@
             }
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
