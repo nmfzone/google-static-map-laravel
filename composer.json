@@ -17,8 +17,16 @@
     ],
     "repositories": [
         {
-            "type": "git",
-            "url": "git@github.com:bensquire/php-static-maps-generator.git"
+            "type": "package",
+            "package": {
+                "name": "bensquire/php-static-maps-generator",
+                "version": "dev-master",
+                "source": {
+                    "url": "git@github.com:bensquire/php-static-maps-generator.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
