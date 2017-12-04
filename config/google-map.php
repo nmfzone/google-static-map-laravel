@@ -22,6 +22,8 @@ return [
 
             'display' => true,
 
+            'label' => 'A',
+
             'color' => 'red',
 
             'size' => '',

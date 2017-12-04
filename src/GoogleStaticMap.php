@@ -33,6 +33,7 @@ class GoogleStaticMap extends Map
                 ->setLatitude($latitude)
                 ->setLongitude($longitude)
                 ->setColor(config('google-map.static_map.default_marker.color', ''))
+                ->setLabel(config('google-map.static_map.default_marker.label', ''))
                 ->setSize(config('google-map.static_map.default_marker.size', ''))
                 ->setIconUrl(config('google-map.static_map.default_marker.icon_url', ''));
 
