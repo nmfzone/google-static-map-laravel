@@ -2,6 +2,7 @@
 
 Generate static map using Google Map API in Laravel.
 
+# Installation
 ### Requirements
 
     >= PHP 7.1
@@ -62,7 +63,7 @@ Next up, the service provider must be registered:
 $app->register(NMFCODES\GoogleStaticMap\GoogleStaticMapServiceProvider::class);
 ```
 
-### Usage
+## Usage
 
 TODO
 
