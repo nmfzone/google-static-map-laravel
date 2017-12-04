@@ -28,7 +28,7 @@ class GoogleStaticMap extends Map
     {
         $this->setCenter("{$latitude},{$longitude}");
 
-        if (config('google-map.static_map.marker.display', true)) {
+        if (config('google-map.static_map.default_marker.display', true)) {
             $config = config('google-map');
 
             $marker = (new Marker)
