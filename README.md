@@ -59,7 +59,7 @@ Next up, the service provider must be registered:
 ```php
 // bootstrap/app.php
 
-$app->register(GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class);
+$app->register(NMFCODES\GoogleStaticMap\GoogleStaticMapServiceProvider::class);
 ```
 
 ### Usage
