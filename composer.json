@@ -1,0 +1,53 @@
+{
+    "name": "nmfzone/google-static-map-laravel",
+    "description": "Generates a static map using Google Map",
+    "keywords": [
+        "google",
+        "static-maps",
+        "generator",
+        "laravel"
+    ],
+    "homepage": "https://github.com/nmfzone/google-static-map-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nabil Muhammad Firdaus",
+            "email": "123.nabil.dev@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "git@github.com:bensquire/php-static-maps-generator.git"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "illuminate/contracts": "5.*",
+        "illuminate/support": "5.*",
+        "bensquire/php-static-maps-generator": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NMFCODES\\GoogleStaticMap\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NMFCODES\\GoogleStaticMap\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NMFCODES\\GoogleStaticMap\\GoogleStaticMapServiceProvider"
+            ],
+            "aliases": {
+                "GoogleStaticMap": "NMFCODES\\GoogleStaticMap\\GoogleStaticMapFacade"
+            }
+        }
+    }
+}
