@@ -18,6 +18,18 @@ return [
 
         'type' => 'roadmap',
 
+        'default_marker' => [
+
+            'display' => true,
+
+            'color' => 'red',
+
+            'size' => 'mid',
+
+            'icon_url' => null,
+
+        ],
+
     ],
 
 ];
