@@ -19,7 +19,7 @@
         "php": ">=7.1.0",
         "illuminate/contracts": "5.*",
         "illuminate/support": "5.*",
-        "nmfzone/php-static-maps-generator": "^2.0"
+        "bensquire/php-static-maps-generator": "2.0.*"
     },
     "require-dev": {
         "phpunit/phpunit" : "^6.2"
