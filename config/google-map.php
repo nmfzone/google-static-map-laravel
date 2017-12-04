@@ -12,6 +12,12 @@ return [
 
         'height' => 300,
 
+        'scale' => 1,
+
+        'format' => 'png',
+
+        'type' => 'roadmap',
+
     ],
 
 ];

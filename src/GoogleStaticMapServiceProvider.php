@@ -2,6 +2,7 @@
 
 namespace NMFCODES\GoogleStaticMap;
 
+use Exception;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Illuminate\Foundation\Application as LaravelApplication;
@@ -33,14 +34,29 @@ class GoogleStaticMapServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(GoogleStaticMap::class, function ($app) {
-            $config = $app->config['google-map'];
+        $this->app->singleton(GoogleStaticMap::class, function () {
+            $config = config('google-map');
 
-            return (new GoogleStaticMap)
+            $map = (new GoogleStaticMap)
                 ->setAPIKey($config['api_key'])
                 ->setZoom($config['static_map']['zoom'])
                 ->setHeight($config['static_map']['height'])
-                ->setWidth($config['static_map']['width']);
+                ->setWidth($config['static_map']['width'])
+                ->setMapType($config['static_map']['type'])
+                ->setFormat($config['static_map']['format'])
+                ->setScale($config['static_map']['scale']);
+
+            try {
+                $map = $map->setLanguage(config('app.locale'));
+            } catch (Exception $e) {
+                // do nothing
+            }
+
+            if ($lang = config('google-map.static_map.lang')) {
+                $map = $map->setLanguage($lang);
+            }
+
+            return $map;
         });
     }
 }
