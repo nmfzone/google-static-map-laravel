@@ -42,7 +42,5 @@ class GoogleStaticMapServiceProvider extends ServiceProvider
                 ->setHeight($config['static_map']['height'])
                 ->setWidth($config['static_map']['width']);
         });
-
-        $this->app->alias('google-static-map', GoogleStaticMap::class);
     }
 }
