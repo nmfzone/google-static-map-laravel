@@ -49,5 +49,6 @@
                 "GoogleStaticMap": "NMFCODES\\GoogleStaticMap\\GoogleStaticMapFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
