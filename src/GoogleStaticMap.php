@@ -29,15 +29,16 @@ class GoogleStaticMap extends Map
         $this->setCenter("{$latitude},{$longitude}");
 
         if (config('google-map.static_map.default_marker.display', true)) {
-            $config = config('google-map');
-
             $marker = (new Marker)
-                ->setColor($config['static_map']['default_marker']['color'])
-                ->setSize($config['static_map']['default_marker']['size'])
+                ->setColor(config('google-map.static_map.default_marker.color'))
                 ->setLatitude($latitude)
                 ->setLongitude($longitude);
 
-            if ($icon = $config['static_map']['default_marker']['icon_url']) {
+            if ($size = config('google-map.static_map.default_marker.size')) {
+                $marker = $marker->setSize($size);
+            }
+
+            if ($icon = config('google-map.static_map.default_marker.icon_url')) {
                 $marker = $marker->setIconUrl($icon);
             }
 
