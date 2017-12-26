@@ -46,7 +46,7 @@ If you want to make use of the facade you must install it as well:
 If you want to change the default config, you must publish the config file:
 
 ```bash
-$ php artisan vendor:publish --provider="NMFCODES\GoogleStaticMap\GoogleStaticMap"
+$ php artisan vendor:publish --provider="NMFCODES\GoogleStaticMap\GoogleStaticMapServiceProvider"
 ```
 
 ### Installation in Lumen
