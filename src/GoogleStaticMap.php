@@ -16,6 +16,18 @@ class GoogleStaticMap extends Map
     {
         return $this->buildSource();
     }
+    
+    /**
+     * Reset the markers.
+     *
+     * @return void
+     */
+    public function resetMarkers()
+    {
+        $this->markers = [];
+
+        return $this;
+    }
 
     /**
      * Setup the underlying map data.
@@ -26,6 +38,9 @@ class GoogleStaticMap extends Map
      */
     public function make($latitude, $longitude)
     {
+        // We need to manually reset the markers
+        $this->resetMarkers();
+        
         $this->setCenter("{$latitude},{$longitude}");
 
         if (config('google-map.static_map.default_marker.display', true)) {
